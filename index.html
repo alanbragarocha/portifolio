@@ -15,20 +15,22 @@
   
   <header>
     <nav>
-      <div class="logo"> logo </div>
+      <div class="logo"> 
+        <img src="/assets/images/github.svg" alt="">
+      </div>
 
       <div class="menu-btn">
           <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
       </div>
 
       <ul>
-          <li> <a href="#" class="active"> Home </a> </li>
-          <li> <a href="#"> Sobre</a> </li>
-          <li> <a href="#"> Serviços</a> </li>
-          <li> <a href="#"> Galeria</a> </li>
-          <li> <a href="#"> Preços</a> </li>
+          
+          <li> <a href="#sobre"> Sobre</a> </li>
+          <li> <a href="#habilidades">Habilidades</a> </li>
+          <li> <a href="#projetos"> Projetos</a> </li>
+          <li> <a href="#contato"> Contato</a> </li>
       </ul>
-  </nav>>
+  </nav>
 </header>
 
 
@@ -65,8 +67,12 @@
     </div>
   </div>
 </main>
+
+<samp id="habilidades"></samp>
   <section class="technologies" id="technologies">
+    
     <h2>Conhecimento nas principais tecnologias do mercado</h2>
+    
     <ul class="technologies__list">
       <li class="technologies__item">
         <img class="technologies__logo" src="assets/images/technologies/Html.svg" alt="Logo Html">
@@ -86,6 +92,7 @@
     </ul>
   </section>
 
+  <span id="Projetos" id="verprojetos"></span>
   <section id="projetos" class="projects">
     <h2>Projetos</h2>
     <div class="projects__container">
@@ -124,7 +131,7 @@
           </div>
         </div>
       </div>
-      
+      <samp id="projetos"></samp>
       <div class="projects__card card--reverse">
         <img class="card__cover" src="assets/images/projects/Em breve.svg" alt="Capa Archstil">
         <div class="card__body">
@@ -208,7 +215,7 @@
   <section id="sobre" class="about">
     <div class="box-container">
       <div class="minha-image">
-        <img src="assets/images/minhaSelfie.svg" alt="sobre-Image" />
+        <img src="assets/images/avatar.jpg" alt="sobre-Image" />
       </div>
       <div class="content">
         <h2>meu Nome é Alan.</h2>
@@ -220,7 +227,7 @@
             <h4>sexo: <span>Masculino</span></h4>
             <h4>Trabalho: <span>Desenvolvimento Web</span></h4>
             <h4>freelance: <span>disponível</span></h4>
-            <a href="./sebre" class="btn2">Saiba mais <i class="fas fa-user"></i></a>
+            <a href="sobre.html" class="btn2">Saiba mais <i class="fa fa-user"></i></a>
             <a class="btn2" href="https://drive.google.com/u/0/uc?id=1kDRuEB2d9DBOoOLiH8dv2HFNwp8Bh6W8&export=download" class="btn">download CV <i class="fas fa-download"></i></a>
                   <div class="contagem-experiencia">
 
@@ -254,15 +261,16 @@
       <div class="col1">
         <div class="row1">
           <h3>Formação</h3>
-          <h4>Desenvolvimento de Software com Metodologia Ágil</h4>
-          <span>Abr 2023 - Atualmente</span>
+          <h4> Analista de sistema </h4>
+          <span>dez de 2020 - mar de 2022</span>
           <div class="about__icons">
             <i class="bi bi-bank"></i>
-            <span>Universidade Salvador</span>
+            <span>Estácio de Sá</span>
           </div>
+          <!---->
           <div class="about__icons">
             <i class="bi bi-mortarboard"></i>
-            <span>Pós-graduação Lato Sensu - Especialização</span>
+            <span></span>
           </div>
         </div>
        
@@ -272,34 +280,34 @@
         <div id="accordion">
           <div class="accordion__item active">
             <button class="accordion__header start">
-              <span>Versionamento de Código com Git e GitHub</span>
+              <span>Front-End na  Digital Innovation One (DIO.me) </span>
               <i class="bi bi-caret-down-fill"></i>
             </button>
             <div class="accordion__body">
-              <p>Digital Innovation One. Fev 2023. 2h.</p>
-              <p>O que é versionamento de código, Git e GitHub...</p>
+              <p>Html, Css e JavaScript </p>
             </div>
           </div>
+          <!--
           <div class="accordion__item">
             <button class="accordion__header">
-              <span>Contribuindo em um Projeto Open Source no GitHub</span>
+              <span></span>
               <i class="bi bi-caret-down-fill"></i>
             </button>
             <div class="accordion__body">
-              <p>Digital Innovation One. Fev 2023. 1h.</p>
-              <p>Lab prático sobre colaboração em projetos de código aberto.</p>
+              <p/p>
+              <p></p>
             </div>
-          </div>
+          </div> 
           <div class="accordion__item">
             <button class="accordion__header end">
-              <span>Organizando seus Estudos com os Roadmaps DIO e o Notion</span>
+              <span></span>
               <i class="bi bi-caret-down-fill"></i>
             </button>
             <div class="accordion__body end">
               <p>...</p>
             </div>
           </div>
-        </div>
+        </div> -->
       
           </div>
         </div>
@@ -318,7 +326,7 @@
         </a>
       </li>
       <li>
-        <a class="menu__link" href="https://www.linkedin.com/in/alan-braga-rocha-pcd" target="_blank">
+        <a class="menu__link" href="https://www.linkedin.com/in/alanbragapcd/" target="_blank">
           <img src="./assets/images/linkedin.svg" alt="">
         </a>
       </li>
@@ -337,5 +345,6 @@
 
   <script src="assets/js/scripts.js"></script>
   <script src="assets/js/menu.js"></script>
+  <script src="./assets/js/ContaTempo.js"></script>
 </body>
 </html>

@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400&display=swap');
+
+:root, :root[data-theme='dark'] {
+  --primary-color: #F0F0F0  ;
+
+  --primary-bg-color: #000;
+  --secondary-bg-color: #28292E;
+  --primary-border-color: #28292E;
+	--secondary-border-color: #56575A;
+  --btn-color: #ffc710;
+  --title-color: #ffc710;
+  --text-color: #9A9A9C;
+  --link-color: #9A9A9C;
+  --icon-color: #C7C8C9;
+}
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  list-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-bg-color) transparent;
+}
+
+body {
+  background: var(--primary-bg-color);
+  font-family:'Inter', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+}
+
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+i {
+  color: var(--icon-color);
+}
+
+b {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 0.4rem;
+}
+
+h3 {
+  font-size: 1.55rem;
+  text-align: left;
+}
+
+h4 {
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 1.15rem;
+  text-align: left;
+}
+
+h1, h2, h3 {
+  font-family: 'League Spartan', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  color: var(--title-color);
+  font-weight: 200;
+}
+
+p, span, li {
+  font-size: 1rem;
+}
+
+p {
+  text-align: justify;
+}
+/* header manu */
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+/* Navigation atualizado com medidas em rem */
+/* filepath: /c:/Users/casa/alan/portifolio/assets/css/styles.css */
+nav {
+  display: flex;
+  height: 100%; /* 80px / 16 = 5rem */
+  width: 100%;
+  background-color: var(--primary-bg-color);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3.125rem 0 6.25rem; /* 0 50px 0 100px */
+  flex-wrap: wrap;
+}
+
+ nav .logo img {
+  width:  5.5rem;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li {
+  margin: 0 0.3125rem; /* 5px / 16 = 0.3125rem */
+}
+nav ul li a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.125rem; /* 18px / 16 = 1.125rem */
+  font-weight: 500;
+  padding: 0.5rem 0.9375rem; /* 8px 15px convertidos */
+  border-radius: 0.3125rem; /* 5px = 0.3125rem */
+  letter-spacing: 0.0625rem; /* 1px = 0.0625rem */
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover {
+  background: var(--btn-color);
+}
+
+nav .menu-btn i {
+  color: var(--primary-color);
+  cursor: pointer;
+  display: none;
+}
+
+/* Responsividade: conversão de px para rem */
+@media (max-width: 57.5rem) { /* 920px / 16 = 57.5rem */
+  nav .menu-btn i {
+    display: block;
+  }
+  nav ul {
+    position: fixed;
+    top: 5rem; /* 80px / 16 = 5rem */
+    left: -100%;
+    background-color: var(--primary-bg-color);
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  nav ul.open {
+    left: 0;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 3.125rem 0; /* 50px / 16 = 3.125rem */
+  }
+  nav ul li a {
+    font-size: 1.4375rem; /* 23px / 16 = 1.4375rem */
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: #f88f06;
+  }
+}
+
+/*-------------------------------------------------------------------*/
+
+
+
+/* Midia social*/
+/* Midia social */
+.menu--social {
+  display: flex;
+  gap: 1rem; /* Espaçamento entre os ícones */
+}
+
+.menu--social img {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.menu--social img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 768px) {
+  .menu--social img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .menu__link {
+    font-size: 1.25rem;
+  }
+}
+/* end menu*/
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  width: 100%;
+  background: transparent;
+  border-radius: 3.125rem;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  transition: ease-in-out .3s;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  transition: ease-in-out .3s;
+}
+
+.btn span, .btn i {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.btn--primary span {
+  color: var(--primary-color);
+}
+
+.btn--primary {
+  border: 1px solid var(--primary-color);
+}
+
+main, .projects, .about, .contact {
+  padding: 2.5rem 1rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.main__content1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.main__content2 iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+
+/* end accordion  */
+
+/* contact */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  border-top: 1px solid var(--primary-border-color);
+  border-bottom: 1px solid var(--primary-border-color);
+}
+
+.contact p {
+  text-align: center;
+}
+
+.contact .btn {
+  width: auto;
+}
+
+.contact .email {
+  text-transform: lowercase;
+}
+
+
+
+footer {
+  margin-bottom: 5rem;
+}
+
+footer p {
+  font-size: .875rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+  .header {
+    border-bottom: 1px solid var(--primary-border-color);
+    padding: 1rem 6rem;
+    background: var(--primary-bg-color);
+  }
+
+  .nav--mobile {
+    display: none;
+  }
+
+  .header__nav {
+    display: flex;
+  }
+
+  .header__nav,
+  .header__toggle {
+    min-width: 30%;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+}
