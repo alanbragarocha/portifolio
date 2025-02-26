@@ -1,13 +1,14 @@
+/* Importação de fontes */
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400&display=swap');
 
+/* Variáveis de cores */
 :root, :root[data-theme='dark'] {
-  --primary-color: #F0F0F0  ;
-
+  --primary-color: #F0F0F0;
   --primary-bg-color: #000;
   --secondary-bg-color: #28292E;
   --primary-border-color: #28292E;
-	--secondary-border-color: #56575A;
+  --secondary-border-color: #56575A;
   --btn-color: #ffc710;
   --title-color: #ffc710;
   --text-color: #9A9A9C;
@@ -15,10 +16,7 @@
   --icon-color: #C7C8C9;
 }
 
-
-
-
-
+/* Reset e configurações básicas */
 * {
   margin: 0;
   padding: 0;
@@ -31,11 +29,12 @@
 
 body {
   background: var(--primary-bg-color);
-  font-family:'Inter', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-color);
+  line-height: 1.5;
 }
 
-
+/* Links e ícones */
 a {
   text-decoration: none;
   color: var(--text-color);
@@ -49,33 +48,7 @@ i {
   color: var(--icon-color);
 }
 
-b {
-  font-weight: 400;
-}
-
-h1 {
-  font-size: 2.5rem;
-  font-weight: 200;
-}
-
-h2 {
-  font-size: 2rem;
-  text-align: center;
-  letter-spacing: 0.4rem;
-}
-
-h3 {
-  font-size: 1.55rem;
-  text-align: left;
-}
-
-h4 {
-  color: var(--primary-color);
-  font-weight: 400;
-  font-size: 1.15rem;
-  text-align: left;
-}
-
+/* Títulos */
 h1, h2, h3 {
   font-family: 'League Spartan', Tahoma, Geneva, Verdana, sans-serif;
   text-transform: uppercase;
@@ -83,91 +56,126 @@ h1, h2, h3 {
   font-weight: 200;
 }
 
+h1 { font-size: 2.5rem; }
+h2 { 
+  font-size: 2rem; 
+  text-align: center;
+  letter-spacing: 0.4rem; 
+}
+h3 { font-size: 1.55rem; text-align: left; }
+h4 {
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 1.15rem;
+  text-align: left;
+}
+
+/* Parágrafos e demais textos */
 p, span, li {
   font-size: 1rem;
 }
-
 p {
   text-align: justify;
 }
-/* header manu */
 
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-/* Navigation atualizado com medidas em rem */
-/* filepath: /c:/Users/casa/alan/portifolio/assets/css/styles.css */
+/* -------------------- */
+/* Menu de Navegação */
+/* -------------------- */
 nav {
   display: flex;
-  height: 100%; /* 80px / 16 = 5rem */
-  width: 100%;
-  background-color: var(--primary-bg-color);
   align-items: center;
   justify-content: space-between;
-  padding: 0 3.125rem 0 6.25rem; /* 0 50px 0 100px */
   flex-wrap: wrap;
+  width: 100%;
+  height: 5rem; /* 80px */
+  background-color: var(--primary-bg-color);
+  padding: 0 6.25rem 0 3.125rem; /* 100px e 50px convertidos para rem */
+  position: relative;
 }
 
- nav .logo img {
-  width:  5.5rem;
+/* Logo */
+nav .logo img {
+  width: 18rem;
+  transition: width 0.3s ease;
 }
+
+/* Lista de navegação */
 nav ul {
   display: flex;
-  flex-wrap: wrap;
-  list-style: none;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
 }
-nav ul li {
-  margin: 0 0.3125rem; /* 5px / 16 = 0.3125rem */
-}
+
+/* Itens da lista */
 nav ul li a {
   color: var(--primary-color);
-  text-decoration: none;
-  font-size: 1.125rem; /* 18px / 16 = 1.125rem */
+  font-size: 1.125rem;
   font-weight: 500;
-  padding: 0.5rem 0.9375rem; /* 8px 15px convertidos */
-  border-radius: 0.3125rem; /* 5px = 0.3125rem */
-  letter-spacing: 0.0625rem; /* 1px = 0.0625rem */
+  padding: 0.5rem 0.9375rem;
+  border-radius: 0.3125rem;
+  letter-spacing: 0.0625rem;
   transition: all 0.3s ease;
 }
+
 nav ul li a.active,
 nav ul li a:hover {
   background: var(--btn-color);
 }
 
-nav .menu-btn i {
-  color: var(--primary-color);
-  cursor: pointer;
+/* Ícone do menu (hamburger) */
+nav .menu-btn {
   display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--primary-color);
 }
 
-/* Responsividade: conversão de px para rem */
-@media (max-width: 57.5rem) { /* 920px / 16 = 57.5rem */
-  nav .menu-btn i {
+/* -------------------- */
+/* Responsividade do Menu */
+/* -------------------- */
+@media (max-width: 57.5rem) { /* 920px */
+  /* Exibe o ícone do menu */
+  nav .menu-btn {
     display: block;
   }
+  
+  /* Ajusta a logo */
+  nav .logo img {
+    width: 18rem;
+    margin-bottom: 10rem;
+  }
+  
+  /* Oculta a lista de navegação fora da tela */
   nav ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: fixed;
-    top: 5rem; /* 80px / 16 = 5rem */
+    top: 0;
     left: -100%;
-    background-color: var(--primary-bg-color);
-    height: 100vh;
     width: 100%;
-    text-align: center;
-    display: block;
-    transition: all 0.3s ease;
+    height: 100vh;
+    background-color: var(--primary-bg-color);
+    transition: left 0.3s ease;
+    z-index: 1000;
   }
+  
+  /* Quando ativo, o menu desliza para dentro */
   nav ul.open {
     left: 0;
   }
+  
+  /* Itens do menu no mobile */
   nav ul li {
     width: 100%;
-    margin: 3.125rem 0; /* 50px / 16 = 3.125rem */
+    text-align: center;
+    margin: 1.875rem 0; /* 30px aproximadamente */
   }
+  
   nav ul li a {
-    font-size: 1.4375rem; /* 23px / 16 = 1.4375rem */
+    font-size: 1.4375rem;
   }
+  
   nav ul li a.active,
   nav ul li a:hover {
     background: none;
@@ -175,15 +183,14 @@ nav .menu-btn i {
   }
 }
 
-/*-------------------------------------------------------------------*/
+/* -------------------- */
+/* Outras Seções (mantidas conforme sua estrutura anterior) */
+/* -------------------- */
 
-
-
-/* Midia social*/
-/* Midia social */
+/* Mídias Sociais */
 .menu--social {
   display: flex;
-  gap: 1rem; /* Espaçamento entre os ícones */
+  gap: 1rem;
 }
 
 .menu--social img {
@@ -204,30 +211,84 @@ nav .menu-btn i {
     width: 2.5rem;
     height: 2.5rem;
   }
-
   .menu__link {
     font-size: 1.25rem;
   }
 }
-/* end menu*/
+
+/* Seção de Bio */
+.title-bio {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 2rem 0;
+}
+
+@media screen and (min-width: 768px) {
+  .title-bio {
+    font-size: 3rem;
+    text-align: justify;
+  }
+}
+
+.container-bio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Imagem de perfil */
+.selfe {
+  flex: 0 0 auto;
+}
+.selfe img {
+  width: 100%;
+  max-width: 18rem;
+  border-radius: 50%;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .selfe img {
+    max-width: 20rem;
+  }
+}
+
+/* Container de texto */
+.text-container {
+  flex: 1 1 18.75rem;
+  max-width: 37.5rem;
+  text-align: justify;
+}
+.text-container p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+@media screen and (min-width: 768px) {
+  .text-container p {
+    font-size: 1.125rem;
+  }
+}
+
+/* Botões */
 .btn {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 0.625rem;
   width: 100%;
   background: transparent;
-  border-radius: 3.125rem;
   border: none;
+  border-radius: 3.125rem;
   padding: 0.875rem 1.5rem;
-  transition: ease-in-out .3s;
+  transition: transform 0.3s ease-in-out;
   cursor: pointer;
   color: var(--primary-color);
 }
 
 .btn:hover {
   transform: scale(1.05);
-  transition: ease-in-out .3s;
 }
 
 .btn span, .btn i {
@@ -235,48 +296,19 @@ nav .menu-btn i {
   text-transform: uppercase;
 }
 
-.btn--primary span {
-  color: var(--primary-color);
-}
-
 .btn--primary {
   border: 1px solid var(--primary-color);
 }
 
-main, .projects, .about, .contact {
-  padding: 2.5rem 1rem;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.main__content1 {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.main__content2 iframe {
-  width: 100%;
-  aspect-ratio: 16/9;
-}
-
-
-/* end accordion  */
-
-/* contact */
-
+/* Seção de Contato */
 .contact {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 1.5rem;
   border-top: 1px solid var(--primary-border-color);
   border-bottom: 1px solid var(--primary-border-color);
+  padding: 2rem 0;
 }
 
 .contact p {
@@ -291,45 +323,86 @@ main {
   text-transform: lowercase;
 }
 
-
-
+/* Rodapé */
 footer {
   margin-bottom: 5rem;
-}
-
-footer p {
-  font-size: .875rem;
   text-align: center;
   padding: 1rem;
 }
 
-/* Responsividade */
+footer p {
+  font-size: 0.875rem;
+}
+
+/* Estilos para telas maiores */
 @media (min-width: 768px) {
   .header {
     border-bottom: 1px solid var(--primary-border-color);
     padding: 1rem 6rem;
     background: var(--primary-bg-color);
   }
-
   .nav--mobile {
     display: none;
   }
-
   .header__nav {
     display: flex;
   }
-
-  .header__nav,
-  .header__toggle {
+  .header__nav, .header__toggle {
     min-width: 30%;
   }
-
   h1 {
     font-size: 5rem;
   }
-
   h2 {
     font-size: 3rem;
   }
+  main, .projects, .about {
+    padding: 8rem 6rem 4rem 6rem;
+  }
+  .contact {
+    padding: 6rem;
+  }
+  .contact p {
+    width: 80%;
+  }
+  .main__content1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .technologies {
+    padding: 6.25rem 6rem 2rem 6rem;
+    margin-top: -6rem;
+  }
+  footer {
+    margin: 0;
+  }
+}
 
+@media (min-width: 992px) {
+  .projects__card {
+    flex-direction: row;
+  }
+  .projects__card.card--reverse {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .card__cover {
+    width: 55%;
+  }
+  .about {
+    gap: 5rem;
+  }
+  .about__content1, .about__content2 {
+    display: grid;
+    grid-template-columns: 34% 60%;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+  .about__description h2 {
+    text-align: left;
+  }
+  .description__buttons {
+    justify-content: flex-start;
+  }
 }
