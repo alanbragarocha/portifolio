@@ -191,6 +191,27 @@
    .btn--primary {
      border: 1px solid var(--primary-color);
    }
+
+   .btn.btn--primary span {
+     font-size: 1.1rem;
+     font-weight: 500;
+     letter-spacing: 0.05em;
+     color: var(--primary-color);
+     transition: all 0.3s ease;
+   }
+   
+   .btn.btn--primary:hover span {
+     color: var(--primary-bg-color);
+     transform: translateY(-2px);
+   }
+   
+   /* Responsividade para o texto do botão */
+   @media (max-width: 768px) {
+     .btn.btn--primary span {
+       font-size: 0.5rem;
+       letter-spacing: 0.03em;
+     }
+   }
    
    /* ============================
       Estrutura das Seções
