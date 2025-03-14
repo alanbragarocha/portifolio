@@ -1,0 +1,408 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400&display=swap');
+
+/* Variáveis de cores */
+:root, :root[data-theme='dark'] {
+  --primary-color: #F0F0F0;
+  --primary-bg-color: #000;
+  --secondary-bg-color: #28292E;
+  --primary-border-color: #28292E;
+  --secondary-border-color: #56575A;
+  --btn-color: #ffc710;
+  --title-color: #ffc710;
+  --text-color: #9A9A9C;
+  --link-color: #9A9A9C;
+  --icon-color: #C7C8C9;
+}
+
+/* Reset e configurações básicas */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  list-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-bg-color) transparent;
+}
+
+body {
+  background: var(--primary-bg-color);
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* Links e ícones */
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+i {
+  color: var(--icon-color);
+}
+
+/* Títulos */
+h1, h2, h3 {
+  font-family: 'League Spartan', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  color: var(--title-color);
+  font-weight: 200;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { 
+  font-size: 2rem; 
+  text-align: center;
+  letter-spacing: 0.4rem; 
+}
+h3 { font-size: 1.55rem; text-align: left; }
+h4 {
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 1.15rem;
+  text-align: left;
+}
+
+/* Parágrafos e demais textos */
+p, span, li {
+  font-size: 1rem;
+}
+p {
+  text-align: justify;
+}
+
+/* -------------------- */
+/* Menu de Navegação */
+/* -------------------- */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 5rem; /* 80px */
+  background-color: var(--primary-bg-color);
+  padding: 0 6.25rem 0 3.125rem; /* 100px e 50px convertidos para rem */
+  position: relative;
+}
+
+/* Logo */
+nav .logo img {
+  width: 18rem;
+  transition: width 0.3s ease;
+}
+
+/* Lista de navegação */
+nav ul {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+
+/* Itens da lista */
+nav ul li a {
+  color: var(--primary-color);
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding: 0.5rem 0.9375rem;
+  border-radius: 0.3125rem;
+  letter-spacing: 0.0625rem;
+  transition: all 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  background: var(--btn-color);
+}
+
+/* Ícone do menu (hamburger) */
+nav .menu-btn {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+/* -------------------- */
+/* Responsividade do Menu */
+/* -------------------- */
+@media (max-width: 57.5rem) { /* 920px */
+  /* Exibe o ícone do menu */
+  nav .menu-btn {
+    display: block;
+  }
+  
+  /* Ajusta a logo */
+  nav .logo img {
+    width: 18rem;
+    margin-bottom: 10rem;
+  }
+  
+  /* Oculta a lista de navegação fora da tela */
+  nav ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary-bg-color);
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+  
+  /* Quando ativo, o menu desliza para dentro */
+  nav ul.open {
+    left: 0;
+  }
+  
+  /* Itens do menu no mobile */
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    margin: 1.875rem 0; /* 30px aproximadamente */
+  }
+  
+  nav ul li a {
+    font-size: 1.4375rem;
+  }
+  
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: #f88f06;
+  }
+}
+
+/* -------------------- */
+/* Outras Seções (mantidas conforme sua estrutura anterior) */
+/* -------------------- */
+
+/* Mídias Sociais */
+.menu--social {
+  display: flex;
+  gap: 1rem;
+}
+
+.menu--social img {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.menu--social img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 768px) {
+  .menu--social img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .menu__link {
+    font-size: 1.25rem;
+  }
+}
+
+/* Seção de Bio */
+.title-bio {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 2rem 0;
+}
+
+@media screen and (min-width: 768px) {
+  .title-bio {
+    font-size: 3rem;
+    text-align: justify;
+  }
+}
+
+.container-bio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Imagem de perfil */
+.selfe {
+  flex: 0 0 auto;
+}
+.selfe img {
+  width: 100%;
+  max-width: 18rem;
+  border-radius: 50%;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .selfe img {
+    max-width: 20rem;
+  }
+}
+
+/* Container de texto */
+.text-container {
+  flex: 1 1 18.75rem;
+  max-width: 37.5rem;
+  text-align: justify;
+}
+.text-container p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+@media screen and (min-width: 768px) {
+  .text-container p {
+    font-size: 1.125rem;
+  }
+}
+
+/* Botões */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 3.125rem;
+  padding: 0.875rem 1.5rem;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn span, .btn i {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.btn--primary {
+  border: 1px solid var(--primary-color);
+}
+
+/* Seção de Contato */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  border-top: 1px solid var(--primary-border-color);
+  border-bottom: 1px solid var(--primary-border-color);
+  padding: 2rem 0;
+}
+
+.contact p {
+  text-align: center;
+}
+
+.contact .btn {
+  width: auto;
+}
+
+.contact .email {
+  text-transform: lowercase;
+}
+
+/* Rodapé */
+footer {
+  margin-bottom: 5rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer p {
+  font-size: 0.875rem;
+}
+
+/* Estilos para telas maiores */
+@media (min-width: 768px) {
+  .header {
+    border-bottom: 1px solid var(--primary-border-color);
+    padding: 1rem 6rem;
+    background: var(--primary-bg-color);
+  }
+  .nav--mobile {
+    display: none;
+  }
+  .header__nav {
+    display: flex;
+  }
+  .header__nav, .header__toggle {
+    min-width: 30%;
+  }
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  main, .projects, .about {
+    padding: 8rem 6rem 4rem 6rem;
+  }
+  .contact {
+    padding: 6rem;
+  }
+  .contact p {
+    width: 80%;
+  }
+  .main__content1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .technologies {
+    padding: 6.25rem 6rem 2rem 6rem;
+    margin-top: -6rem;
+  }
+  footer {
+    margin: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .projects__card {
+    flex-direction: row;
+  }
+  .projects__card.card--reverse {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .card__cover {
+    width: 55%;
+  }
+  .about {
+    gap: 5rem;
+  }
+  .about__content1, .about__content2 {
+    display: grid;
+    grid-template-columns: 34% 60%;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+  .about__description h2 {
+    text-align: left;
+  }
+  .description__buttons {
+    justify-content: flex-start;
+  }
+}
