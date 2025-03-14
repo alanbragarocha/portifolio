@@ -126,10 +126,7 @@
         letter-spacing: 1px;
         transition: all 0.3s ease;
     }
-    nav ul li a.active,
-    nav ul li a:hover{
-        background: var(--btn-color);
-    }
+    
     
     nav .menu-btn i{
         color: var(--text-color);
@@ -545,28 +542,93 @@
       Seção de Contato
       ============================ */
    .contact {
-     display: flex;
-     flex-direction: column;
-     gap: 1.5rem;
-     border-top: 1px solid var(--primary-border-color);
-     border-bottom: 1px solid var(--primary-border-color);
-     align-items: center;
-     padding: 2.5rem 1rem;
-   }
-   .contact p {
+     background-color: var(--secondary-bg-color);
+     padding: 5rem 1rem;
      text-align: center;
-     max-width: 600px;
-   }
-   .contact .btn {
-     width: auto;
-   }
-   .contact .email {
-     text-transform: lowercase;
    }
    
-   /* ============================
-      Rodapé
-      ============================ */
+   .contact .container {
+     display: flex;
+     flex-direction: column;
+     gap: 3rem;
+     max-width: 800px;
+     margin: 0 auto;
+   }
+   
+   .contact h2 {
+     font-size: 2.5rem;
+     margin-bottom: 1rem;
+     color: var(--title-color);
+   }
+   
+   .contact p {
+     font-size: 1.2rem;
+     line-height: 1.6;
+     color: var(--text-color);
+     margin-bottom: 2rem;
+   }
+   
+   .contact .menu--social {
+     margin: 2rem 0;
+   }
+   
+   .contact .menu--social img {
+     width: 3rem;
+     height: 3rem;
+     padding: 0.5rem;
+     background-color: var(--primary-bg-color);
+     border-radius: 50%;
+     transition: all 0.3s ease;
+   }
+   
+   .contact .menu--social img:hover {
+     transform: translateY(-5px);
+     background-color: var(--btn-color);
+   }
+   
+   .contact .btr-contac {
+     display: inline-block;
+   }
+   
+   .contact .btn {
+     background-color: transparent;
+     border: 2px solid var(--btn-color);
+     padding: 1rem 2rem;
+     font-size: 1.1rem;
+     transition: all 0.3s ease;
+   }
+   
+   .contact .btn:hover {
+     background-color: var(--btn-color);
+     color: var(--primary-bg-color);
+     transform: translateY(-3px);
+   }
+   
+   /* Responsividade */
+   @media (max-width: 768px) {
+     .contact {
+       padding: 3rem 1rem;
+     }
+   
+     .contact h2 {
+       font-size: 2rem;
+     }
+   
+     .contact p {
+       font-size: 1rem;
+     }
+   
+     .contact .menu--social img {
+       width: 2.5rem;
+       height: 2.5rem;
+     }
+   
+     .contact .btn {
+       padding: 0.8rem 1.5rem;
+       font-size: 1rem;
+     }
+   }
+   
    footer {
      margin: 2rem 0;
      padding: 1rem;
@@ -607,4 +669,4 @@
       .projects__card {
         flex: 1 1 calc(25% - 3rem); /* Quatro cards por linha */
       }
-    }   
+    }
